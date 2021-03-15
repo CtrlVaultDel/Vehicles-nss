@@ -41,5 +41,9 @@ namespace Vehicles
         {
             return $"The {MainColor} Zero comes to a complete stop after popping a wheelie.";
         }
+        public Zero()
+        {
+            CurrentChargePercentage = RandomNumber();
+        }
     }
 }

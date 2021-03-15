@@ -7,7 +7,8 @@ namespace Vehicles
     {
         public double FuelCapacity { get; set; }
 
-        public double CurrentTankPercentage { get; set; } = 0.22;
+        public double CurrentTankPercentage { get; set; }
+
 
         public void RefuelTank()
         {
@@ -42,6 +43,10 @@ namespace Vehicles
         public override string Stop()
         {
             return $"The {MainColor} Ram Truck comes to a complete stop after making a gnarly jump.";
+        }
+        public Ram()
+        {
+            CurrentTankPercentage = RandomNumber();
         }
     }
 }
