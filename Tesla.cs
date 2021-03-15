@@ -1,14 +1,23 @@
 using System;
+using System.Globalization;
 
 namespace Vehicles
 {
-    class Tesla : Vehicle
+    class Tesla : Vehicle, IElectricVehicle
     {
-        public double FuelCapacity { get; set; }
+        public double BatteryKWh { get; set; }
+
+        public double CurrentChargePercentage { get; set; } = 0.57;
 
         public void ChargeBattery()
         {
-            Console.WriteLine("Battery has been recharged!");
+            CurrentChargePercentage = 1.00;
+            Console.WriteLine("The Tesla's battery has been recharged!");
+        }
+
+        public void DisplayCharge()
+        {
+            Console.WriteLine($"{this.GetType().Name} Charge: {CurrentChargePercentage.ToString("P", CultureInfo.InvariantCulture)}");
         }
         public override string Drive()
         {

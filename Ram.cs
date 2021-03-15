@@ -1,14 +1,23 @@
 using System;
+using System.Globalization;
 
 namespace Vehicles
 {
-    class Ram : Vehicle
+    class Ram : Vehicle, IGasVehicle
     {
         public double FuelCapacity { get; set; }
 
+        public double CurrentTankPercentage { get; set; } = 0.22;
+
         public void RefuelTank()
         {
-            Console.WriteLine("Gas tank has been refueled!");
+            CurrentTankPercentage = 1.00;
+            Console.WriteLine("The Ram truck's gas tank has been refueled!");
+        }
+        public void DisplayGasTank()
+        {
+            Console.WriteLine($"{this.GetType().Name} Gas Level: {CurrentTankPercentage.ToString("P", CultureInfo.InvariantCulture)}");
+
         }
         public override string Drive()
         {

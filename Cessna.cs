@@ -1,14 +1,21 @@
 using System;
+using System.Globalization;
 
 namespace Vehicles
 {
-    class Cessna : Vehicle
+    class Cessna : Vehicle, IGasVehicle
     {
         public double FuelCapacity { get; set; }
 
+        public double CurrentTankPercentage { get; set; } = 0.60;
         public void RefuelTank()
         {
-            Console.WriteLine("Gas tank has been refueled!");
+            CurrentTankPercentage = 1.00;
+            Console.WriteLine("The Cessna's gas tank has been refueled!");
+        }
+        public void DisplayGasTank()
+        {
+            Console.WriteLine($"{this.GetType().Name} Gas Level: {CurrentTankPercentage.ToString("P", CultureInfo.InvariantCulture)}");
         }
         public override string Drive()
         {
