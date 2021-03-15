@@ -43,5 +43,9 @@ namespace Vehicles
         {
             return $"The {MainColor} Tesla comes to a complete stop very quietly.";
         }
+        public Tesla()
+        {
+            CurrentChargePercentage = RandomNumber();
+        }
     }
 }

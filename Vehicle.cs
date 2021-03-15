@@ -6,6 +6,14 @@ namespace Vehicles
     {
         public string MainColor { get; set; }
         public int MaxCapacity { get; set; }
+
+        public double RandomNumber()
+        {
+            Random rnd = new Random();
+            double startingPercentage = rnd.NextDouble();
+            return startingPercentage;
+
+        }
         public virtual string Drive()
         {
             return "Vrooooooom!";

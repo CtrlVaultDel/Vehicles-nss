@@ -7,7 +7,7 @@ namespace Vehicles
     {
         public double FuelCapacity { get; set; }
 
-        public double CurrentTankPercentage { get; set; } = 0.60;
+        public double CurrentTankPercentage { get; set; }
         public void RefuelTank()
         {
             CurrentTankPercentage = 1.00;
@@ -40,6 +40,11 @@ namespace Vehicles
         public override string Stop()
         {
             return $"After rolling down the runway, the {MainColor} Cessna comes to a complete stop.";
+        }
+
+        public Cessna()
+        {
+            CurrentTankPercentage = RandomNumber();
         }
     }
 }
