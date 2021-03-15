@@ -7,6 +7,8 @@ namespace Vehicles
         public string MainColor { get; set; }
         public int MaxCapacity { get; set; }
 
+        // RandomNumber is used to generate a random number between 0 and 0.99.
+        // This value is
         public double RandomNumber()
         {
             Random rnd = new Random();
